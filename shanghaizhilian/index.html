@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="上海智联招聘为您提供最新的上海职位招聘信息、企业招聘需求及求职攻略。涵盖互联网、金融、制造等行业，助您快速找到理想工作。">
+    <meta name="keywords" content="上海智联招聘, 上海招聘, 求职网, 职位搜索, 企业招聘">
+    <title>上海智联招聘-上海最新职位发布与求职服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --primary-dark: #1565c0;
+            --accent-color: #ff6f00;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+        }
+
+        .flex-center {
+            align-items: center;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(30, 136, 229, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            padding: 60px 0;
+            color: white;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .input-group {
+            flex: 1;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .input-group button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .search-options {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .search-options label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        /* Job Cards Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .job-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px 0 0 4px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag.salary {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .job-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .job-info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Hot Industries */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .industry-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .industry-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f5f9ff;
+        }
+
+        .industry-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .industry-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* News Section */
+        .news-section {
+            margin-top: 60px;
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .news-list {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            background: #f5f7fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .news-content h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .news-content h3:hover {
+            color: var(--primary-color);
+        }
+
+        .news-content p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .tips-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tips-item {
+            padding: 12px;
+            background: #fafafa;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .tips-item strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            border-top: 1px solid #37474f;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .search-box {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .search-row {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .news-list {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>上海智联招聘</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">职位搜索</a>
+                <a href="#">公司库</a>
+                <a href="#">校园招聘</a>
+                <a href="#">职场资讯</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>连接未来，从这里开始</h1>
+                <p>上海智联招聘致力于为求职者提供海量优质职位，为企业提供高效的人才招聘解决方案。数千家上海知名企业正在热招。</p>
+                <div class="search-options">
+                    <label><input type="checkbox" checked> 猎头职位</label>
+                    <label><input type="checkbox"> 社会招聘</label>
+                    <label><input type="checkbox"> 校园招聘</label>
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="search-row">
+                    <div class="input-group">
+                        <input type="text" placeholder="搜索职位名称、公司或关键词">
+                        <button>🔍</button>
+                    </div>
+                    <button class="btn btn-primary" style="height: 48px; padding: 0 24px;">搜索职位</button>
+                </div>
+                <div class="search-row">
+                    <div class="input-group">
+                        <input type="text" placeholder="输入城市，例如：上海">
+                        <button>📍</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="输入公司名称">
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 8px;">
+                    <a href="#" style="font-size: 13px; color: #666;">热门搜索：</a>
+                    <span style="font-size: 13px; color: #333;">Java开发 · 产品经理 · 财务会计 · 运营专员 · 行政助理</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Hot Industries -->
+        <section>
+            <h2 class="section-title">热门行业</h2>
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <span class="industry-icon">💻</span>
+                    <span class="industry-name">互联网/IT</span>
+                </div>
+                <div class="industry-item">
+                    <span class="industry-icon">🤝</span>
+                    <span class="industry-name">金融/银行</span>
+                </div>
+                <div class="industry-item">
+                    <span class="industry-icon">🏭</span>
+                    <span class="industry-name">制造/生产</span>
+                </div>
+                <div class="industry-item">
+                    <span class="industry-icon">🏥</span>
+                    <span class="industry-name">医疗/健康</span>
+                </div>
+                <div class="industry-item">
+                    <span class="industry-icon">🎓</span>
+                    <span class="industry-name">教育/培训</span>
+                </div>
+                <div class="industry-item">
+                    <span class="industry-icon">🛍️</span>
+                    <span class="industry-name">零售/电商</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Jobs -->
+        <section style="margin-top: 48px;">
+            <div class="section-title">
+                <h2>最新职位推荐</h2>
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="job-grid">
+                <!-- Job Card 1 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海字节跳动科技有限公司</div>
+                            <h3 class="job-title">高级Java开发工程师</h3>
+                        </div>
+                        <span class="tag salary">25-40K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">3-5年</span>
+                        <span class="tag">本科</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 静安区</div>
+                        <div class="job-info-item">📅 2天内活跃</div>
+                        <div class="job-info-item">💬 12人已投递</div>
+                    </div>
+                </article>
+
+                <!-- Job Card 2 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海携程旅行网</div>
+                            <h3 class="job-title">产品经理（用户增长方向）</h3>
+                        </div>
+                        <span class="tag salary">30-50K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">5-10年</span>
+                        <span class="tag">本科</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 浦东新区</div>
+                        <div class="job-info-item">📅 1天内活跃</div>
+                        <div class="job-info-item">💬 28人已投递</div>
+                    </div>
+                </article>
+
+                <!-- Job Card 3 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海华润置地有限公司</div>
+                            <h3 class="job-title">人力资源专员（招聘方向）</h3>
+                        </div>
+                        <span class="tag salary">10-15K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">1-3年</span>
+                        <span class="tag">本科</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 徐汇区</div>
+                        <div class="job-info-item">📅 3天内活跃</div>
+                        <div class="job-info-item">💬 5人已投递</div>
+                    </div>
+                </article>
+
+                <!-- Job Card 4 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海米哈游网络科技股份有限公司</div>
+                            <h3 class="job-title">UI设计师</h3>
+                        </div>
+                        <span class="tag salary">18-25K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">3-5年</span>
+                        <span class="tag">本科</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 浦东新区</div>
+                        <div class="job-info-item">📅 5小时内活跃</div>
+                        <div class="job-info-item">💬 45人已投递</div>
+                    </div>
+                </article>
+
+                <!-- Job Card 5 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海浦东发展银行股份有限公司</div>
+                            <h3 class="job-title">客户经理</h3>
+                        </div>
+                        <span class="tag salary">15-25K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">经验不限</span>
+                        <span class="tag">大专</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 全上海</div>
+                        <div class="job-info-item">📅 1周内活跃</div>
+                        <div class="job-info-item">💬 89人已投递</div>
+                    </div>
+                </article>
+
+                <!-- Job Card 6 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company-name">上海蔚来汽车有限公司</div>
+                            <h3 class="job-title">销售顾问</h3>
+                        </div>
+                        <span class="tag salary">10-20K</span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">经验不限</span>
+                        <span class="tag">大专</span>
+                        <span class="tag">上海</span>
+                        <span class="tag">全职</span>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-info-item">📍 全上海</div>
+                        <div class="job-info-item">📅 2天内活跃</div>
+                        <div class="job-info-item">💬 32人已投递</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- News & Tips -->
+        <section class="news-section">
+            <div class="section-title">
+                <h2>职场资讯与求职指南</h2>
+            </div>
+            <div class="news-list">
+                <div class="news-main">
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>2024年秋季上海人才市场供需分析报告发布</h3>
+                            <p>最新数据显示，互联网、新能源及生物医药行业人才需求持续增长，平均薪资较去年同期上涨5%。求职者应重点关注哪些技能？</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">12</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>面试避坑指南：如何撰写一份高通过率的简历？</h3>
+                            <p>简历是求职的第一张名片。本文将从排版设计、关键词优化、经历描述三个维度，教你如何制作一份让HR眼前一亮的简历。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">08</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>上海落户政策最新解读：人才引进条件放宽</h3>
+                            <p>随着上海“五个中心”建设的推进，针对高层次人才和紧缺技能人才的落户政策进一步优化，对符合条件的毕业生有何利好？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-tips">
+                    <h3 style="font-size: 18px; margin-bottom: 20px;">职场小贴士</h3>
+                    <div class="tips-list">
+                        <div class="tips-item">
+                            <strong>简历优化</strong>
+                            使用STAR法则描述工作经历，突出成果和数据。
+                        </div>
+                        <div class="tips-item">
+                            <strong>面试准备</strong>
+                            提前了解公司背景，准备好常见问题的回答思路。
+                        </div>
+                        <div class="tips-item">
+                            <strong>谈薪技巧</strong>
+                            了解行业薪酬水平，从长期发展角度谈薪资。
+                        </div>
+                        <div class="tips-item">
+                            <strong>职业规划</strong>
+                            定期复盘，明确短期和长期的职业目标。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>上海智联招聘</h4>
+                    <p class="footer-desc">作为中国领先的人才招聘网站，我们致力于连接人才与机会，为企业提供全方位的人力资源解决方案，帮助个人实现职业梦想。</p>
+                    <div class="flex" style="gap: 10px;">
+                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 4px;"></div>
+                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 4px;"></div>
+                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 4px;"></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>求职服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">职位搜索</a></li>
+                        <li><a href="#">城市招聘</a></li>
+                        <li><a href="#">应届生专区</a></li>
+                        <li><a href="#">猎头服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>企业服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">企业招聘</a></li>
+                        <li><a href="#">校园招聘</a></li>
+                        <li><a href="#">人才库</a></li>
+                        <li><a href="#">招聘解决方案</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 上海智联招聘 版权所有 | 互联网ICP备12345678号 | 增值电信业务经营许可证：沪B2-XXXXXX</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
