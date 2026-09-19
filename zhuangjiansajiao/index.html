@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撞见撒娇-恋爱互动模拟与情感攻略指南</title>
+    <meta name="description" content="撞见撒娇提供专业的恋爱心理学分析与互动模拟体验。了解如何识别撒娇信号，掌握撒娇技巧，探索不同性格下的情感表达方式，提升亲密关系沟通技巧。">
+    <meta name="keywords" content="撞见撒娇,撒娇技巧,恋爱心理学,情感互动,情侣相处,撒娇攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff7eb3;
+            --secondary-color: #ff758c;
+            --accent-color: #ff85a2;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #fff0f5;
+            --bg-card: #ffffff;
+            --shadow: 0 4px 12px rgba(255, 126, 179, 0.15);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 117, 140, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #fff 0%, var(--bg-body) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            border: 1px solid rgba(255, 117, 140, 0.2);
+        }
+
+        /* Core Concepts Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffe6eb, #fff0f5);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Scenario Section */
+        .scenario-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .scenario-box {
+            background: #fff0f5;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 30px 0;
+            border: 2px dashed var(--primary-color);
+        }
+
+        .scenario-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option-btn {
+            padding: 12px 30px;
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .option-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e6fffa;
+            border-radius: var(--radius);
+            color: #2c7a7b;
+            display: none;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .scenario-box {
+                padding: 20px;
+            }
+
+            .options {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .option-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>❤</span> 撞见撒娇
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#skills">撒娇技巧</a></li>
+                    <li><a href="#types">类型解析</a></li>
+                    <li><a href="#scenario">情景模拟</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#scenario" class="cta-btn">开始测试</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>读懂<span class="highlight">撒娇</span>的温柔艺术</h1>
+                <p>不仅仅是卖萌，更是一种高级的情感沟通策略。学会识别与回应撒娇，让亲密关系升温，让生活充满甜蜜。</p>
+                <div class="hero-tags">
+                    <span class="tag">情感升温</span>
+                    <span class="tag">沟通技巧</span>
+                    <span class="tag">性格解析</span>
+                    <span class="tag">心理学</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>撒娇的核心价值</h2>
+                    <p>为什么撒娇是恋爱中的“必杀技”？</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon">🛡</div>
+                        <h3>建立安全感</h3>
+                        <p>适度的示弱和撒娇能够降低对方的防御心理，传递出“我信任你”的信号，从而快速拉近心理距离。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>促进双向互动</h3>
+                        <p>撒娇往往伴随着请求或赞美，这能有效激发对方的保护欲和成就感，让关系从单向付出变为双向奔赴。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">✨</div>
+                        <h3>化解矛盾冲突</h3>
+                        <p>在争执中，一句软糯的撒娇往往能瞬间软化对方的立场，为解决问题创造轻松的氛围。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Sajiao -->
+        <section class="section" id="types" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见的撒娇类型</h2>
+                    <p>不同性格的人，撒娇的方式截然不同</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">👧</div>
+                        <h3>纯真型</h3>
+                        <p>主要表现为眼神无辜、声音轻柔、肢体语言丰富。适合性格温柔、内心单纯的伴侣。</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">🧐</div>
+                        <h3>欲擒故纵型</h3>
+                        <p>通过假装生气或冷淡来博取关注。适合性格独立、有主见，懂得推拉技巧的伴侣。</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">🍰</div>
+                        <h3>美食诱惑型</h3>
+                        <p>利用食物作为媒介，提出小要求。适合吃货情侣，既满足了口腹之欲，又增进了感情。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Scenario -->
+        <section class="section" id="scenario">
+            <div class="container">
+                <div class="scenario-section">
+                    <h2>情景模拟：如何回应？</h2>
+                    <p>当你撞见对方想要撒娇时，你会如何接招？</p>
+                    
+                    <div class="scenario-box">
+                        <div class="scenario-text" id="scenario-text">
+                            男朋友今天加班到很晚才回家，你看到他一脸疲惫地坐在沙发上。
+                        </div>
+                        <div class="options">
+                            <button class="option-btn" onclick="handleResponse(1)">A. 直接给捏肩，并关心地让他去休息。</button>
+                            <button class="option-btn" onclick="handleResponse(2)">B. 轻轻抱住他，在他耳边说：“辛苦啦，抱抱~”</button>
+                            <button class="option-btn" onclick="handleResponse(3)">C. 拿来热牛奶，撒娇地说：“喝完这个，我就不闹你睡觉啦~”</button>
+                        </div>
+                    </div>
+
+                    <div class="result-box" id="result-box">
+                        <strong>分析：</strong> <span id="result-text"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于撒娇，你可能关心的细节</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>撒娇是不是一种软弱的表现？</h4>
+                        <p>不是。真正的撒娇是建立在自信基础上的示弱。它不是无理取闹，而是一种情绪价值的提供。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如果对方不喜欢撒娇怎么办？</h4>
+                        <p>尊重对方的性格差异。有些人更习惯直接、理性的沟通方式。你可以尝试用对方能接受的语言和频率去表达你的依赖。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>撒娇的频率应该怎么控制？</h4>
+                        <p>贵在精而不在多。在关键时刻或对方疲惫时撒娇效果最好，日常保持自然、轻松的相处模式即可。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>撒娇需要特定的语气吗？</h4>
+                        <p>是的。通常降低音调、语速放缓、适当拖长尾音（如“嘛”、“呀”、“呢”）会增加撒娇的可爱度。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">情感咨询</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">© 2023 撞见撒娇. 专注于情感关系研究与互动体验。</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleResponse(choice) {
+            const resultBox = document.getElementById('result-box');
+            const resultText = document.getElementById('result-text');
+            
+            resultBox.style.display = 'block';
+            resultBox.style.animation = 'fadeIn 0.5s ease';
+
+            if (choice === 1) {
+                resultText.innerHTML = "这是一次非常体贴的回应，体现了你的照顾能力。但对方可能更渴望情感上的连接和确认，你可以尝试加入更多肢体接触和言语上的安抚。";
+            } else if (choice === 2) {
+                resultText.innerHTML = "完美的回应！肢体接触配合温柔的语言，能够极大地缓解对方的压力，并让他感受到被深深爱着，这是高情商的撒娇方式。";
+            } else if (choice === 3) {
+                resultText.innerHTML = "这是一个既懂事又带着一点点小要求的撒娇，通常会让对方感到非常受用，既满足了照顾你的愿望，又享受了被依赖的感觉。";
+            }
+        }
+    </script>
+</body>
+</html>
